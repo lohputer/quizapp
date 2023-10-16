@@ -1,24 +1,13 @@
-Q1: jqfeka 
-reportWebVitals
-<i class="fa fa-briefcase
-asd" aria-hidden="true"></i>
-sad
+Q1: Which of these is NOT a Chicken Species?
+Cochin
+Orpington
+Menosprime 
+Plymouth Rock
 -end-
-Q2:
-A:
-A:
-A:
-A: 
+Q2: What did Ayato say? 
+"Im not angry"
+"Clearly his taste in women is the same as his taste in lawyers"
+"When im sleep deprived, im a lil"
+"Be passionate about being successful"
 -end-
-Q3: 
-A:
-A:
-A:
-A: 
--end-
-Q4: 
-A:
-A:
-A:
-A: 
--end-
+Q3:
