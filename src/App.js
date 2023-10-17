@@ -7,13 +7,19 @@ import { useEffect, useState } from 'react';
 export default function App() {
   const [ content, setContent ] = useState("");
   const [ question, setQn ] = useState(-1);
+  const [ seconds, setTime ] = useState(1800);
   useEffect(()=>{
     if (question !== -1) {
+      var intervalId = setInterval(function() {
+        setTime(prevTime => prevTime - 1);
+        clearInterval(intervalId);
+      }, 1000);
       (async function() {
         try {
           const response = await fetch(`${process.env.PUBLIC_URL}/questions.txt`);
           const data = await response.text(); 
-          const questions = data.split("\n-end-\n");
+          const questions = data.split("-end-\r\n");
+          console.log(questions);
           document.getElementById("quiz").style.transform = "rotate(360deg)";
           setTimeout(()=>{
             setContent(
@@ -36,8 +42,9 @@ export default function App() {
                     <input type="radio" className="form-check-input" name={question} value="4" /> {questions[question].split("\n")[4]}
                   </label>
                 </div>
-                {question !== 0 && <button className="btn btn-primary p-2" onClick={() => setQn(x => x-1)}>Previous Question</button>}
-                <button className="btn btn-primary p-2" onClick={() => setQn(x => x+1)}>Next Question</button>
+                  {question !== 0 && <button className="btn btn-primary p-2" onClick={() => setQn(x => x-1)}>Previous Question</button>}
+                  <p>{Math.floor(seconds / 3600) === 0 ? "00": Math.floor(seconds / 3600)}:{Math.floor((seconds - (Math.floor(seconds / 3600) * 3600))/60) === 0 ? "00" : Math.floor((seconds - (Math.floor(seconds / 3600) * 3600))/60)}:{seconds-(Math.floor(seconds / 3600) * 3600)-(Math.floor((seconds - (Math.floor(seconds / 3600) * 3600))/60)*60) === 0 ? "00" : seconds-(Math.floor(seconds / 3600) * 3600)-(Math.floor((seconds - (Math.floor(seconds / 3600) * 3600))/60)*60)} </p>
+                  <button className="btn btn-primary p-2" onClick={() => setQn(x => x+1)}>Next Question</button>
               </>
             );
           }, 50);
@@ -50,7 +57,7 @@ export default function App() {
 
     }
     
-  }, [question]);
+  }, [question, seconds]);
   return (
     <div className="App vh-100 vw-100 d-flex align-items-center justify-content-center">
       <div id="quiz" className="container col-8 m-auto p-4 bg-info text-center rounded shadow">
