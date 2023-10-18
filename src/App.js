@@ -31,14 +31,13 @@ export default function App() {
         try {
           const response = await fetch(`${process.env.PUBLIC_URL}/questions.txt`);
           const data = await response.text(); 
-          const questions = data.split("-end-\r\n");
+          const questions = data.split("-end-\n");
           setTimeout(()=>{
             console.log(question, answers[question]);
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
                 {questions[question].split("\n").length > 5 ? <img className="col-6" src={questions[question].split("\n")[5]} /> : ""}
-                  {!questions[question].split("\n")[1].includes("OEQ") ? 
                   <div className="form-check p-4">
                     <label className="form-check-label" htmlFor={"q"+(question+1)} >
                       <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[1])} checked={answers[question] === questions[question].split("\n")[1] ? true : false} /> {questions[question].split("\n")[1]}
@@ -56,11 +55,6 @@ export default function App() {
                       <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[4])} checked={answers[question] === questions[question].split("\n")[4] ? true : false} /> {questions[question].split("\n")[4]}
                     </label>
                   </div>
-                  : 
-                  <div className="form-group p-4">
-                    <input className="text-center text-primary rounded shadow border border-primary p-2" id={"q"+(question+1)} onChange={()=>answer(document.getElementById("q"+(question+1)).value)} value={answers[question]} type="text" placeholder="Type in your answer" />
-                  </div>
-                  }
                 <p className={question !== 0 && "text-center"}>
                   {String(Math.floor(seconds / 3600)).padStart(2, '0')}:
                   {String(Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60)).padStart(2, '0')}:
@@ -104,7 +98,6 @@ export default function App() {
             <li className="list-group-item">basic english</li>
             <li className="list-group-item">random knowledge</li>
             <li className="list-group-item">maybe math?? and science??</li>
-            <li className="list-group-item">a question with eighteen options for MCQ?!?!</li>
             <li className="list-group-item">statistics</li>
             <li className="list-group-item">i wrote this at 10.52pm at night and i have to wake up at 6.20am and im also planning to sleep at midnight only so pls excuse the god awful questions made</li>
           </ul>

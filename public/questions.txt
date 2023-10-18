@@ -1,123 +1,193 @@
-Q1: Which of these is not a species of ducks?
-Better whistling duck
-Canvasback 
-Domestic duck
-Mallard
+Q1: Which of these dishes are NOT an actual British dish?
+Chip Butty
+Kippers 
+Knocker-bocker glory
+Bacon sandwich 
 -end-
-Q2: Which literary device means the practice of beginning an epic or other narrative by plunging into a crucial situation that is part of a related chain of events?
-Chiasmus
-Erotesis
-Anastrophe
-In Medias Res
+Q2: What's the WORDLE answer for 3 October 2023?
+WHILE
+MERRY
+STING
+IRATE
 -end-
-Q3: ... .-.. --- ...- -. -
-SLOVNT
-IRMETV
-MOPSWA
-ZBREQI
+Q3: The need for inferential statistical methods derives from the need for ______________.
+Sampling
+Population
+Association
+Probability
 -end-
-Q4. How many angles does a 341 sided polygon have?
-341
-179
-212
-342
+Q4: What are Crayola crayons made of?
+Chalk
+Rubber
+Wax
+Clay
 -end-
-Q5. Killer Queen..what's in a pretty cabinet? 
-Caviar and cigarettes 
-Moët et Chandon
-Marie Antoinette
-Cake
+Q5: Which set of RGB colors equals the color in the image?
+rgb(205, 93, 98)
+rgb(244, 203, 137)
+rgb(175, 98, 103)
+rgb(197, 78, 124)
+https://www.colorhexa.com/f4cb89.png
 -end-
-Q6. What is the WORDLE answer for 21 April 2023?
-MARCH
-KAYAK
-CARAT
-BROKE
+Q6: Convert 51824 to Roman numerals. 
+LMDCCCXXIV
+LDLXII
+LVIDCCCXII
+LIDCCCLII
 -end-
-Q7. Which statement is false based on this graph?
+Q7: What is the mass of 1 electron in amu?
+0.00055 u
+0.0055 u
+0.0011111 u 
+0.005 u
+-end-
+Q8: In 2004, a survey counted ____ pandas in the wild.
+1,600
+1,850
+2,200
+2,400
+-end-
+Q9: What is the best definition of funambulist?
+a singer in a choir 
+tightrope walker
+a traveler
+promptness in response
+-end-
+Q10: Killer Queen..she did NOT..
+speak just like a baroness
+meet a man from China
+say "Let them eat cake"
+keep the same address in conversation
+-end-
+Q11: What is the worst definition of serfdom?
+A good time
+Hard work 
+Loyalty
+grind mindset
+-end-
+Q12: What on earth does money for old rope mean?
+Buying something that was not worth the cost or effort
+A traditional method of earning cash
+Money or reward earned for little or no effort
+I made this made up and it's not real at all.
+-end-
+Q13: Fill in this fun Captcha!!
+e3Tj6JDp 
+e3Tj6Jdp
+e3TJ6jdp
+e3TJ6Jdp 
+https://www.jimthatcher.com/images/captcha2.jpg 
+-end-
+Q14: Which species is not an ACTUAL species of spiders?
+Zygiella x-notata
+Wheel spider
+Goliath birdeater
+Patua digu
+-end-
+Q15: Which statement can be confirmed true according to the graph?
+A higher percentage of people aged 36-40 are neither overweight or obese compared to people aged 21-25 in England.
+Within the group of people aged 75+ in England, being overweight is the rarest.
+A higher percentage of people in Britain are overweight when they are 16-24 than when they are 25-34.
+The percentage of people aged 16-24 that are obese is less than 30% of the people aged 35-44 that are overweight.
+https://researchbriefings.files.parliament.uk/documents/SN03336/assets/c847aace-3f97-4b62-b05b-506d3b274b17.png
+-end-
+Q16: What is the scientific definition of a brain freeze?
+A brain freeze is when something that is extremely cold comes into contact with the upper palate of the mouth.
+A brain freeze is a headache that only occurs due to the stimulation of nerves in the brain at a cold temperature.
+A brain freeze is a sudden cold sharpness that causes the brain to be damaged.
+A brain freeze is a disease that causes areas of the brain to feel numb and cold in response to cold temperatures or stress.
+-end-
+Q17: What is false about cheese curds?
+Cheese curds are popular in Quebec, as part of the dish poutine.
+Cheese curds are sometimes referred to formage en croutes.
+Fresh pasteurized milk added with cheese culture and rennet makes cheese curds.
+Cheese curds are often served by Russian Mennonites as part of a traditional light lunch.
+-end-
+Q18: A line crosses through (5, 3) and (3, 5). Which line is parallel to this line?
+4y = 14 - 3x
+2x + 2y = 5 - 4y
+x - y = y + 7 - x
+x^2 = y^2
+-end-
+Q19: There’s a keystone in every great invention. Blenders appear in kitchens around the world, mixing, pureeing, and emulsify food into a wide range of delicious drinks, sauces, and more. They also perform essential tasks in laboratories and research environments, creating _________________.
+endless set-ups to be used for future experiments
+series of variables that can be tested upon
+evenly distributed mixtures for use in scientific applications
+generations of future inventors to change the world
+-end-
+Q20: Blenders are essential for mixing smoothies, specialty coffees, and cocktails in both domestic and restaurant settings. They’re also seeing growing use as protein shakes become a more common meal alternative. Shows like “Will It Blend?” are also _________, spurring the use of blenders to create more and more interesting concoctions. 
+portraying blenders as sort of a prized possession
+shaping blenders to be a revolutionary invention
+turning blenders into a bit of a novelty item
+advertising blenders as a form of innovation and creativity
+-end-
+Q21: What should you do?
+Bet your future on one roll of the dice
+Drive at eighty-eight
+Promise that you will be back in time
+Better remember lightning can strike twice
+-end-
+Q22: 91440mm is..
+100 yards
+360 inches
+0.065102355 nautical miles
+9144000 micrometres
+-end-
+Q23: Image.
+https://www.sciencenews.org/wp-content/uploads/2021/10/101421_EC_duck-physics_feat-1030x580.jpg 
+None of the above
+https://wildlifeboss.com/wp-content/uploads/2022/07/mallard-dabbling-duck.webp
+https://www.advancedsciencenews.com/wp-content/uploads/2021/10/anchor-lee-_zwYL6Oazh0-unsplash.jpg
+https://www.advancedsciencenews.com/wp-content/uploads/2021/10/anchor-lee-_zwYL6Oazh0-unsplash.jpg
+-end-
+Q24: Which statement is false based on this graph?
 The total waste generated in 2000 is less than the amount of waste recycled in 2012.
 From 2000 to 2007, the increase in total waste generated was less than 100%.
 In 2010, the amount of waste trashed is more than three times of the waste recycled.
 From 2011 to 2013, the decrease in total waste generated is less than 500,000.
 https://lh4.googleusercontent.com/3C59cDl7fFrBEIiqt26FrFjhAZ2GwBdIdDf419vgkUJ_me8ms5wnfwCRL4cAuRZNRkPvtD4gOsGhoBXzyvmddSrGU3KQySDvKsA1L76OgCeBNvdQFfesSSbEowG2AvyrSAl3VzqPzvMWUJqaEQ
 -end-
-Q8. What is the collective noun for magistrates?
-Set
-Bench
+Q25: What is the collective noun for pugs?
+Grumble
+Embarrassment
+Fleet
 Pack
-Body
 -end-
-Q9. What move should you play to get checkmate? You are white. that's not supposed to be racist.
+Q26: What is the phylum of spiders?
+Arthroproda
+Clerck 
+Eukaryota
+Animalia
+-end-
+Q27: What move should you play to get checkmate? You are white. that's not supposed to be racist.
 dxe6+
 qf6#
 kh5+
 be6
 https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/faridmusayev/phpBe26Fu.png
 -end-
-Q10. What is the mass number of 68th element? (to 5 s.f)
-151.69
-168.93
-167.26
-158.92
+Q28: Which quote comes from Francis Scott Fitzgerald, the American author of the Great Gatsby?
+"You don't have to be great to start, but you have to start to be great."
+"It's kind of fun to do the impossible."
+"First you take a drink, then the drink takes a drink, then the drink takes you."
+"Opportunities don't happen, you create them."
 -end-
-Q11. qhjkaaalzxcvbuiopaewe. qsmsppaolwnmwe. rtydsdf. Which letter is missing from all three phrases?
-OEQ
+Q29: What colors are the Connect 4 discs in the board game?
+Yellow and red
+Yellow and green
+Blue and purple
+Green and blue 
 -end-
-Q12. Which of these foods are NOT an actual British food?
-Eton Mess 
-Bubble and Squeak
-Ploughman's lunch
-Chippy Putty
+Q30: Which of these is NOT an actual name for a US president?
+John Tyler
+Hector Steinfield
+Grover Cleveland
+James Madison
 -end-
-Q13. Who was the 34th president of Mexico?
-Pedro Lascuráin
-Porfirio Díaz
-Manuel González Flores
-José Ignacio Pavón
+Q31: How many marks was putting in your name worth?
+1
+25
+50
+0
 -end-
-Q14. Which word has the opposite meaning of the word "vex"?
-appease 
-please
-pleasure 
-incense 
--end-
-Q15. Which RGB color set represents this color as shown in the picture?
-rgb(164, 200, 245)
-rgb(71, 154, 255)
-rgb(14, 116, 240)
-rgb(31, 200, 200)
-https://color-hex.org/colors/1fc8c8.png
--end-
-Q16. Convert 149105 to Roman numerals. 
-OEQ
--end-
-Q17. On a scale of 1 to 5, do you feel it is unfair that there are suddenly Open Ended Questions even though I said this was an MCQ quiz?
-OEQ
--end-
-Q18. Fill in this Captcha.
-OEQ
-
-
-
-https://www.codingnepalweb.com/wp-content/uploads/2021/07/Create-Custom-Captcha-using-HTML-CSS-JavaScript.jpg 
--end-
-Q19. How many marks was putting in your name worth? Do you remember??
-0 and no but i am guessing 
-1 and no but i am guessing
-duh i remember this its obviously 25 because i definitely rememberd this
-full marks 
--end-
-Q20. What is this image?
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight01_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight01_-_natures_pics-edit1.jpg
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight02_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight02_-_natures_pics-edit1.jpg
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight03_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight03_-_natures_pics-edit1.jpg
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight04_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight04_-_natures_pics-edit1.jpg
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight02_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight02_-_natures_pics-edit1.jpg
--end-
-Q21. What is the phylum of spiders?
-Arthroproda
-Clerck 
-Eukaryota
-Animalia
--end-
-Q22. 
+Q32: What 
