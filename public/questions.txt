@@ -61,10 +61,7 @@ Q10. What is the mass number of 68th element? (to 5 s.f)
 158.92
 -end-
 Q11. qhjkaaalzxcvbuiopaewe. qsmsppaolwnmwe. rtydsdf. Which letter is missing from all three phrases?
-No letters are missing 
-Either A, C, Q, R, G, D, M, N or H
-Either B, Z, X, U, Y, W, P, L or C
-Either V, K, F, E, J, S, T, I or O
+OEQ
 -end-
 Q12. Which of these foods are NOT an actual British food?
 Eton Mess 
@@ -78,4 +75,48 @@ Porfirio Díaz
 Manuel González Flores
 José Ignacio Pavón
 -end-
-Q14. Choose the word that suits this sentence best.
+Q14. Which word has the opposite meaning of the word "vex"?
+appease 
+please
+pleasure 
+incense 
+-end-
+Q15. Which RGB color set represents this color as shown in the picture?
+rgb(164, 200, 245)
+rgb(71, 154, 255)
+rgb(14, 116, 240)
+rgb(31, 200, 200)
+https://color-hex.org/colors/1fc8c8.png
+-end-
+Q16. Convert 149105 to Roman numerals. 
+OEQ
+-end-
+Q17. On a scale of 1 to 5, do you feel it is unfair that there are suddenly Open Ended Questions even though I said this was an MCQ quiz?
+OEQ
+-end-
+Q18. Fill in this Captcha.
+OEQ
+
+
+
+https://www.codingnepalweb.com/wp-content/uploads/2021/07/Create-Custom-Captcha-using-HTML-CSS-JavaScript.jpg 
+-end-
+Q19. How many marks was putting in your name worth? Do you remember??
+0 and no but i am guessing 
+1 and no but i am guessing
+duh i remember this its obviously 25 because i definitely rememberd this
+full marks 
+-end-
+Q20. What is this image?
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight01_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight01_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight02_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight02_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight03_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight03_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight04_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight04_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight02_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight02_-_natures_pics-edit1.jpg
+-end-
+Q21. What is the phylum of spiders?
+Arthroproda
+Clerck 
+Eukaryota
+Animalia
+-end-
