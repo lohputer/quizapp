@@ -92,7 +92,7 @@ export default function App() {
         {content === "" ?
           <>
           <h1 className="text-primary">A Fun Quiz</h1>
-          <p>Hi yalls! I quite frankly have lost my coding skills after 2 months and need to get back at it. To <em>"celebrate"</em>, I made a <del>50</del> 49 MCQ quiz with random stuff. It's 30 minutes limit. For fun. Good luck :D also clicking the button makes your thing spin.</p>
+          <p>Hi yalls! I quite frankly have lost my coding skills after 2 months and need to get back at it. To <em>"celebrate"</em>, I made a <del>50</del> 49 wait I mean 50 anyway.. MCQ quiz with random stuff. It's 25 minutes limit. For fun. Good luck :D also clicking the button makes your thing spin.</p>
           <h2 className="text-secondary">Range of topics</h2>
           <ul className="border border-primary list-group">
             <li className="list-group-item">basic english</li>
@@ -104,7 +104,7 @@ export default function App() {
           </ul>
           <br></br>
           <div className="form-group">
-            <input className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (1m)" />
+            <input className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (0m)" />
           </div>
           <br></br>
           <button className="btn btn-primary" onClick={() => setQn(0)}>Start Quiz</button>
