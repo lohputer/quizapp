@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react';
 export default function App() {
   const [ content, setContent ] = useState("");
   const [ question, setQn ] = useState(-1);
-  const [ seconds, setTime ] = useState(1800);
+  const [ seconds, setTime ] = useState(1500);
   const [ intervalId, setIntervalId ] = useState(null);
-  const [ answers, setAnswers ] = useState(Array(50).fill(NaN));
+  const [ answers, setAnswers ] = useState(Array(50).fill(""));
   function answer(x) {
     setAnswers((list) => {
       const updatedList = [...list];
@@ -31,29 +31,36 @@ export default function App() {
         try {
           const response = await fetch(`${process.env.PUBLIC_URL}/questions.txt`);
           const data = await response.text(); 
-          const questions = data.split("-end-\n");
+          const questions = data.split("-end-\r\n");
           setTimeout(()=>{
             console.log(question, answers[question]);
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
-                <div className="form-check p-4">
-                  <label className="form-check-label" htmlFor={"q"+(question+1)} >
-                    <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(1)} checked={answers[question] === 1 ? true : false} /> {questions[question].split("\n")[1]}
-                  </label>
-                  <br></br>
-                  <label className="form-check-label" htmlFor={"q"+(question+1)} >
-                    <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(2)} checked={answers[question] === 2 ? true : false}  /> {questions[question].split("\n")[2]}
-                  </label>
-                  <br></br>
-                  <label className="form-check-label" htmlFor={"q"+(question+1)} >
-                    <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(3)} checked={answers[question] === 3 ? true : false}  /> {questions[question].split("\n")[3]}
-                  </label>
-                  <br></br>
-                  <label className="form-check-label" htmlFor={"q"+question} >
-                    <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(4)} checked={answers[question] === 4 ? true : false} /> {questions[question].split("\n")[4]}
-                  </label>
-                </div>
+                {questions[question].split("\n").length > 5 ? <img className="col-6" src={questions[question].split("\n")[5]} /> : ""}
+                  {!questions[question].split("\n")[1].includes("OEQ") ? 
+                  <div className="form-check p-4">
+                    <label className="form-check-label" htmlFor={"q"+(question+1)} >
+                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[1])} checked={answers[question] === questions[question].split("\n")[1] ? true : false} /> {questions[question].split("\n")[1]}
+                    </label>
+                    <br></br>
+                    <label className="form-check-label" htmlFor={"q"+(question+1)} >
+                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[2])} checked={answers[question] === questions[question].split("\n")[2] ? true : false}  /> {questions[question].split("\n")[2]}
+                    </label>
+                    <br></br>
+                    <label className="form-check-label" htmlFor={"q"+(question+1)} >
+                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[3])} checked={answers[question] === questions[question].split("\n")[3] ? true : false}  /> {questions[question].split("\n")[3]}
+                    </label>
+                    <br></br>
+                    <label className="form-check-label" htmlFor={"q"+question} >
+                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[4])} checked={answers[question] === questions[question].split("\n")[4] ? true : false} /> {questions[question].split("\n")[4]}
+                    </label>
+                  </div>
+                  : 
+                  <div className="form-group p-4">
+                    <input className="text-center text-primary rounded shadow border border-primary p-2" id={"q"+(question+1)} onChange={()=>answer(document.getElementById("q"+(question+1)).value)} value={answers[question]} type="text" placeholder="Type in your answer" />
+                  </div>
+                  }
                 <p className={question !== 0 && "text-center"}>
                   {String(Math.floor(seconds / 3600)).padStart(2, '0')}:
                   {String(Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60)).padStart(2, '0')}:
@@ -91,7 +98,7 @@ export default function App() {
         {content === "" ?
           <>
           <h1 className="text-primary">A Fun Quiz</h1>
-          <p>Hi yalls! I quite frankly have lost my coding skills after 2 months and need to get back at it. To <em>"celebrate"</em>, I made a <del>50</del> 49 MCQ quiz with random stuff. It's 30 minutes limit. For fun. Good luck :D also clicking the button makes your thing spin.</p>
+          <p>Hi yalls! I quite frankly have lost my coding skills after 2 months and need to get back at it. To <em>"celebrate"</em>, I made a <del>50</del> 49 wait I mean 50 anyway.. MCQ quiz with random stuff. You need to try complete as much as possible in 25 minutes. For fun. Good luck :D also clicking the button makes your thing spin.</p>
           <h2 className="text-secondary">Range of topics</h2>
           <ul className="border border-primary list-group">
             <li className="list-group-item">basic english</li>
@@ -103,7 +110,7 @@ export default function App() {
           </ul>
           <br></br>
           <div className="form-group">
-            <input className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (1m)" />
+            <input className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (0m)" />
           </div>
           <br></br>
           <button className="btn btn-primary" onClick={() => setQn(0)}>Start Quiz</button>

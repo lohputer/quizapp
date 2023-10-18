@@ -1,10 +1,10 @@
-Q1: Which of these is not a species of whales?
-Livyatan melvillei
-Common milkie whale
-False killer whale
-Southern right whale
+Q1: Which of these is not a species of ducks?
+Better whistling duck
+Canvasback 
+Domestic duck
+Mallard
 -end-
-Q2: Which literary device means a figure of speech wherein the traditional sentence structure is reversed?
+Q2: Which literary device means the practice of beginning an epic or other narrative by plunging into a crucial situation that is part of a related chain of events?
 Chiasmus
 Erotesis
 Anastrophe
@@ -16,16 +16,108 @@ IRMETV
 MOPSWA
 ZBREQI
 -end-
-Q4. How many angles does a 172 sided polygon have?
-172
-178 
-173
-313
+Q4. How many angles does a 341 sided polygon have?
+341
+179
+212
+342
 -end-
-Q5. Killer Queen..what comes before being well versed in etiquette? 
+Q5. Killer Queen..what's in a pretty cabinet? 
 Caviar and cigarettes 
 Moët et Chandon
 Marie Antoinette
-Extraordinarily nice
+Cake
 -end-
 Q6. What is the WORDLE answer for 21 April 2023?
+MARCH
+KAYAK
+CARAT
+BROKE
+-end-
+Q7. Which statement is false based on this graph?
+The total waste generated in 2000 is less than the amount of waste recycled in 2012.
+From 2000 to 2007, the increase in total waste generated was less than 100%.
+In 2010, the amount of waste trashed is more than three times of the waste recycled.
+From 2011 to 2013, the decrease in total waste generated is less than 500,000.
+https://lh4.googleusercontent.com/3C59cDl7fFrBEIiqt26FrFjhAZ2GwBdIdDf419vgkUJ_me8ms5wnfwCRL4cAuRZNRkPvtD4gOsGhoBXzyvmddSrGU3KQySDvKsA1L76OgCeBNvdQFfesSSbEowG2AvyrSAl3VzqPzvMWUJqaEQ
+-end-
+Q8. What is the collective noun for magistrates?
+Set
+Bench
+Pack
+Body
+-end-
+Q9. What move should you play to get checkmate? You are white. that's not supposed to be racist.
+dxe6+
+qf6#
+kh5+
+be6
+https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/faridmusayev/phpBe26Fu.png
+-end-
+Q10. What is the mass number of 68th element? (to 5 s.f)
+151.69
+168.93
+167.26
+158.92
+-end-
+Q11. qhjkaaalzxcvbuiopaewe. qsmsppaolwnmwe. rtydsdf. Which letter is missing from all three phrases?
+OEQ
+-end-
+Q12. Which of these foods are NOT an actual British food?
+Eton Mess 
+Bubble and Squeak
+Ploughman's lunch
+Chippy Putty
+-end-
+Q13. Who was the 34th president of Mexico?
+Pedro Lascuráin
+Porfirio Díaz
+Manuel González Flores
+José Ignacio Pavón
+-end-
+Q14. Which word has the opposite meaning of the word "vex"?
+appease 
+please
+pleasure 
+incense 
+-end-
+Q15. Which RGB color set represents this color as shown in the picture?
+rgb(164, 200, 245)
+rgb(71, 154, 255)
+rgb(14, 116, 240)
+rgb(31, 200, 200)
+https://color-hex.org/colors/1fc8c8.png
+-end-
+Q16. Convert 149105 to Roman numerals. 
+OEQ
+-end-
+Q17. On a scale of 1 to 5, do you feel it is unfair that there are suddenly Open Ended Questions even though I said this was an MCQ quiz?
+OEQ
+-end-
+Q18. Fill in this Captcha.
+OEQ
+
+
+
+https://www.codingnepalweb.com/wp-content/uploads/2021/07/Create-Custom-Captcha-using-HTML-CSS-JavaScript.jpg 
+-end-
+Q19. How many marks was putting in your name worth? Do you remember??
+0 and no but i am guessing 
+1 and no but i am guessing
+duh i remember this its obviously 25 because i definitely rememberd this
+full marks 
+-end-
+Q20. What is this image?
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight01_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight01_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight02_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight02_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight03_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight03_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight04_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight04_-_natures_pics-edit1.jpg
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Whistling_duck_flight02_-_natures_pics-edit1.jpg/1200px-Whistling_duck_flight02_-_natures_pics-edit1.jpg
+-end-
+Q21. What is the phylum of spiders?
+Arthroproda
+Clerck 
+Eukaryota
+Animalia
+-end-
+Q22. 
