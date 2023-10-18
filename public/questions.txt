@@ -1,10 +1,10 @@
-Q1: Which of these is not a species of whales?
-Livyatan melvillei
-Common milkie whale
-False killer whale
-Southern right whale
+Q1: Which of these is not a species of ducks?
+Better whistling duck
+Canvasback 
+Domestic duck
+Mallard
 -end-
-Q2: Which literary device means a figure of speech wherein the traditional sentence structure is reversed?
+Q2: Which literary device means the practice of beginning an epic or other narrative by plunging into a crucial situation that is part of a related chain of events?
 Chiasmus
 Erotesis
 Anastrophe
@@ -16,16 +16,35 @@ IRMETV
 MOPSWA
 ZBREQI
 -end-
-Q4. How many angles does a 172 sided polygon have?
-172
-178 
-173
-313
+Q4. How many angles does a 341 sided polygon have?
+341
+179
+212
+342
 -end-
-Q5. Killer Queen..what comes before being well versed in etiquette? 
+Q5. Killer Queen..what's in a pretty cabinet? 
 Caviar and cigarettes 
 Moët et Chandon
 Marie Antoinette
-Extraordinarily nice
+Cake
 -end-
 Q6. What is the WORDLE answer for 21 April 2023?
+MARCH
+KAYAK
+CARAT
+BROKE
+-end-
+Q7. Which statement is false based on this graph?
+The total waste generated in 2000 is less than the amount of waste recycled in 2012.
+From 2000 to 2007, the increase in total waste generated was less than 100%.
+In 2010, the amount of waste trashed is more than three times of the waste recycled.
+From 2011 to 2013, the decrease in total waste generated is less than 500,000.
+https://lh4.googleusercontent.com/3C59cDl7fFrBEIiqt26FrFjhAZ2GwBdIdDf419vgkUJ_me8ms5wnfwCRL4cAuRZNRkPvtD4gOsGhoBXzyvmddSrGU3KQySDvKsA1L76OgCeBNvdQFfesSSbEowG2AvyrSAl3VzqPzvMWUJqaEQ
+-end-
+Q8. What is the collective noun for magistrates?
+Set
+Bench
+Pack
+Body
+-end-
+Q9. 

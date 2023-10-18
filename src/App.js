@@ -31,12 +31,13 @@ export default function App() {
         try {
           const response = await fetch(`${process.env.PUBLIC_URL}/questions.txt`);
           const data = await response.text(); 
-          const questions = data.split("-end-\n");
+          const questions = data.split("-end-\r\n");
           setTimeout(()=>{
             console.log(question, answers[question]);
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
+                {questions[question].split("\n").length > 5 ? <img className="col-6" src={questions[question].split("\n")[5]} /> : ""}
                 <div className="form-check p-4">
                   <label className="form-check-label" htmlFor={"q"+(question+1)} >
                     <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(1)} checked={answers[question] === 1 ? true : false} /> {questions[question].split("\n")[1]}
