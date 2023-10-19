@@ -151,7 +151,7 @@ Q25: What is the collective noun for pugs?
 Grumble
 Embarrassment
 Fleet
-Pack
+Pack 
 -end-
 Q26: What is the phylum of spiders?
 Arthroproda
@@ -190,4 +190,47 @@ Q31: How many marks was putting in your name worth?
 50
 0
 -end-
-Q32: What 
+Q32: 4 words are Kartoffelpuffer, Cheonmaneyo, Lahmacun, Khanom krok. Which word is the odd one out?
+Khanom krok
+Cheonmaneyo
+Lahmacun
+Kartoffelpuffer
+-end-
+Q33: Which is the worst definition of a martyrdom?
+Sending someone away
+Tying loose ends
+A new beginning
+Injuries
+-end-
+Q34: What is NOT a armadillo???
+rat in shell thing
+sloth-like mammal with snout walking creature
+max level armor creature
+block game mob elections loser
+-end-
+Q35: Based on the lego venn diagram, which statement is true?
+Both Dulo and Lego fit up your nose.
+Lego is the combination of only fitting up noise and colourful.
+White color font is used in the diagram six times.
+This diagram was made in the UK.
+https://i.pinimg.com/originals/70/ba/7b/70ba7b2fb6da73eaf0c1875bcb632595.png
+-end-
+Q36: Which step is actually correct for surviving an encounter with an ostrich?
+If forced to defend yourself against an ostrich, use close-quarters combat.
+If you have a gun and need to use it, aim for the ostrich's neck so that it cannot see straight.
+You should use the furthest, longest object as a weapon against the ostrich.
+If the ostrich does not give up despite being attacked in the neck, aim for its wings.
+https://www.wikihow.com/images/thumb/9/97/Survive-an-Encounter-with-an-Ostrich-Step-5-Version-3.jpg/aid181266-v4-728px-Survive-an-Encounter-with-an-Ostrich-Step-5-Version-3.jpg
+-end-
+Q37: Trolley Problem..The trolley is currently going to run over 5 children, but you can pull a lever to redirect the trolley to eighteen children.
+Pull the lever
+Don't pull the lever
+Run in front of the trolley and try to stop it
+Get into the trolley and after running over 5 children, reverse park and go to the other track.
+-end-
+Q38: How many hours of sleep did I get in October 18 2023?
+7 hours
+6 hours
+4 hours or less
+10 hours
+-end-
