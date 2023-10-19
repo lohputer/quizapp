@@ -35,17 +35,9 @@ LDLXII
 LVIDCCCXII
 LIDCCCLII
 -end-
-Q7: What is the mass of 1 electron in amu?
-0.00055 u
-0.0055 u
-0.0011111 u 
-0.005 u
+Q7: REDOING
 -end-
-Q8: In 2004, a survey counted ____ pandas in the wild.
-1,600
-1,850
-2,200
-2,400
+Q8: REDOING
 -end-
 Q9: What is the best definition of funambulist?
 a singer in a choir 
@@ -147,7 +139,7 @@ In 2010, the amount of waste trashed is more than three times of the waste recyc
 From 2011 to 2013, the decrease in total waste generated is less than 500,000.
 https://lh4.googleusercontent.com/3C59cDl7fFrBEIiqt26FrFjhAZ2GwBdIdDf419vgkUJ_me8ms5wnfwCRL4cAuRZNRkPvtD4gOsGhoBXzyvmddSrGU3KQySDvKsA1L76OgCeBNvdQFfesSSbEowG2AvyrSAl3VzqPzvMWUJqaEQ
 -end-
-Q25: What is the collective noun for pugs?
+Q25: WE ARE HALFWAY THROUGH!! What is the collective noun for pugs?
 Grumble
 Embarrassment
 Fleet
@@ -172,11 +164,7 @@ Q28: Which quote comes from Francis Scott Fitzgerald, the American author of the
 "First you take a drink, then the drink takes a drink, then the drink takes you."
 "Opportunities don't happen, you create them."
 -end-
-Q29: What colors are the Connect 4 discs in the board game?
-Yellow and red
-Yellow and green
-Blue and purple
-Green and blue 
+Q29: REDOING
 -end-
 Q30: Which of these is NOT an actual name for a US president?
 John Tyler
@@ -234,3 +222,47 @@ Q38: How many hours of sleep did I get in October 18 2023?
 4 hours or less
 10 hours
 -end-
+Q39: Heimlick _____
+Manouver
+Maneuvuer
+Maneuver
+Manoouver
+-end-
+Q40: Warning! Last 10 questions will start to make no sense! Find Queen.
+what???
+uhhhh e5
+Steve walks warily down the street
+five feet above
+-end-
+Q41: NOT butter.
+british scones
+semi-solid emulsion at any temp
+LURPAK (unsalted)
+criminal undercover, gon pop' like trouble
+-end-
+Q42: Which statement is true based on the graph?
+There is more black than white in the graph.
+For families with income lower than $100,000, the test scores for writing and critical reading are less than 540.
+The shape used to represent critical reading and writing is the same.
+The gaps between each interval for both axis are the same.
+https://thesocietypages.org/socimages/files/2010/10/42.jpg
+-end-
+Q43: 1. 2. Fizz. 4. Buzz. Fizz. ...
+7 Fizz Buzz
+Fizz Buzz Fizz
+Fizz Buzz Buzz
+7 8 Fizz
+-end-
+Q44: Which drink is the closest to the color rgb(150, 100, 40)?
+Coca Cola
+Shake Shack
+Orange Juice
+Chocolate Milk
+-end-
+Q45: ABCDEF -> XYZABC (warning! removing the previous button option for no reason after this question)
+5!
+Energy loss of 10%
+Et tu Brute?
+oooh cool letter htings
+-end-
+Q46: What was the answer to Q23?
