@@ -10,6 +10,39 @@ export default function App() {
   const [ seconds, setTime ] = useState(1500);
   const [ intervalId, setIntervalId ] = useState(null);
   const [ answers, setAnswers ] = useState(Array(50).fill(""));
+  const [ correct, setCorrect ] = useState(Array(50).fill(["", "", ""]));
+  async function endQuiz() {
+    try {
+      const response2 = await fetch(`${process.env.PUBLIC_URL}/answers.txt`);
+      const data2 = await response2.text(); 
+      var answ = data2.split("\n");
+      var score = 0;
+      for (let i=0; i<answ.length; i++) {
+        if (answ[i] === answers[i]) {
+          score++;
+          setCorrect((list)=>{
+            const updatedList = [...list];
+            updatedList[i] = ["Correct", answ[i], answers[i]];
+            return updatedList;
+          });
+        } else {
+          setCorrect((list)=>{
+            const updatedList = [...list];
+            updatedList[i] = ["Incorrect", answ[i], answers[i]];
+            return updatedList;
+          });
+        }
+      }
+      setContent(
+        <>
+          <h1 className="text-primary">Congrats! I can't believe you actually bothered to do this quiz!</h1>
+          <p>Let's check your results. You got a score of <strong className="text-primary">{score}/50</strong>.</p>
+        </>
+      ); 
+    } catch (error) {
+      console.log(error);
+    }
+  }
   function answer(x) {
     setAnswers((list) => {
       const updatedList = [...list];
@@ -18,7 +51,7 @@ export default function App() {
     });
   }
   useEffect(()=>{
-    if (question !== -1) {
+    if (question !== -1 && question !== 49) {
       if (intervalId) {
         clearInterval(intervalId);
       }
@@ -31,11 +64,8 @@ export default function App() {
         try {
           const response = await fetch(`${process.env.PUBLIC_URL}/questions.txt`);
           const data = await response.text(); 
-          console.log(data);
-          const questions = data.split(/-end-\r\n/);
-          console.log(questions);
+          const questions = data.split(/-end-\n/);
           setTimeout(()=>{
-            console.log(question, answers[question]);
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
@@ -63,8 +93,8 @@ export default function App() {
                   {String(seconds - Math.floor(seconds / 3600) * 3600 - Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60) * 60).padStart(2, '0')}
                 </p>
                 <div className="row d-flex">
-                  {question !== 0 && <button className="btn btn-primary col-5 m-auto" onClick={() => setQn(x => x-1)}>Previous</button>}
-                  <button className={question !== 0 ? "btn btn-primary col-5 m-auto" : "btn btn-primary"} onClick={() => setQn(x => x+1)}>Next</button>
+                  {(question !== 0 && question < 45) && <button className="btn btn-primary col-5 m-auto" onClick={() => setQn(x => x-1)}>Previous</button>}
+                  <button className={question !== 0 ? "btn btn-primary col-5 m-auto" : "btn btn-primary"} onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>Next</button>
                 </div>
               </>
             );
