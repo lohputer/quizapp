@@ -13,22 +13,28 @@ export default function App() {
   const [ correct, setCorrect ] = useState(Array(50).fill(["", "", ""]));
   async function endQuiz() {
     try {
+      setQn(50);
       const response2 = await fetch(`${process.env.PUBLIC_URL}/answers.txt`);
       const data2 = await response2.text(); 
-      var answ = data2.split("\n");
+      var answ = 0;
+      if (data2.includes("\r")) {
+        answ = data2.split(/\r\n/);
+      } else {
+        answ = data2.split(/\n/);
+      }
       var score = 0;
       for (let i=0; i<answ.length; i++) {
         if (answ[i] === answers[i]) {
           score++;
           setCorrect((list)=>{
             const updatedList = [...list];
-            updatedList[i] = ["Correct", answ[i], answers[i]];
+            updatedList[i] = ["1", answ[i], answers[i]];
             return updatedList;
           });
         } else {
           setCorrect((list)=>{
             const updatedList = [...list];
-            updatedList[i] = ["Incorrect", answ[i], answers[i]];
+            updatedList[i] = ["0", answ[i], answers[i]];
             return updatedList;
           });
         }
@@ -37,6 +43,22 @@ export default function App() {
         <>
           <h1 className="text-primary">Congrats! I can't believe you actually bothered to do this quiz!</h1>
           <p>Let's check your results. You got a score of <strong className="text-primary">{score}/50</strong>.</p>
+          <table class="table">
+            <thead>
+              <th>Score</th>
+              <th>Your Answer</th>
+              <th>Correct Answer</th>
+            </thead>
+            <tbody>
+              {correct.map((x)=>
+                <tr className={x[0] === "1" ? "bg-success" : "bg-danger"}>
+                  <td>{x[0]}</td>
+                  <td>{x[1]}</td>
+                  <td>{x[2]}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </>
       ); 
     } catch (error) {
@@ -51,7 +73,7 @@ export default function App() {
     });
   }
   useEffect(()=>{
-    if (question !== -1 && question !== 49) {
+    if (question !== -1 && question !== 50) {
       if (intervalId) {
         clearInterval(intervalId);
       }
@@ -64,7 +86,13 @@ export default function App() {
         try {
           const response = await fetch(`${process.env.PUBLIC_URL}/questions.txt`);
           const data = await response.text(); 
-          const questions = data.split(/-end-\n/);
+          var questions = null;
+          if (data.includes("\r")) {
+            questions = data.split("-end-\r\n");
+          } else {
+            questions = data.split("-end-\n")
+          }
+          console.log(questions[question], questions, question);
           setTimeout(()=>{
             setContent(
               <>
