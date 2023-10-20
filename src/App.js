@@ -10,7 +10,7 @@ export default function App() {
   const [ seconds, setTime ] = useState(1500);
   const [ intervalId, setIntervalId ] = useState(null);
   const [ answers, setAnswers ] = useState(Array(50).fill(""));
-  const [ correct, setCorrect ] = useState(Array(50).fill(["", "", ""]));
+  const [ name, setName ] = useState("");
   async function endQuiz() {
     try {
       setQn(50);
@@ -18,44 +18,52 @@ export default function App() {
       const data2 = await response2.text(); 
       var answ = 0;
       if (data2.includes("\r")) {
-        answ = data2.split(/\r\n/);
+        answ = data2.split("\r\n");
       } else {
         answ = data2.split(/\n/);
       }
       var score = 0;
+      var scores = [];
       for (let i=0; i<answ.length; i++) {
-        if (answ[i] === answers[i]) {
+        if (answers[i].includes(answ[i])) {
           score++;
-          setCorrect((list)=>{
-            const updatedList = [...list];
-            updatedList[i] = ["1", answ[i], answers[i]];
-            return updatedList;
-          });
+          scores.push(
+            <>
+              <tr className="text-success d-flex">
+                  <td className="col-2">1</td>
+                  <td className="col-5">{answers[i]}</td>
+                  <td className="col-5">{answ[i]}</td>
+                </tr>
+            </>
+          );
         } else {
-          setCorrect((list)=>{
-            const updatedList = [...list];
-            updatedList[i] = ["0", answ[i], answers[i]];
-            return updatedList;
-          });
+          scores.push(
+            <>
+              <tr className="text-danger d-flex">
+                  <td className="col-2">0</td>
+                  <td className="col-5">{answers[i]}</td>
+                  <td className="col-5">{answ[i]}</td>
+                </tr>
+            </>
+          );
         }
       }
+      console.log(scores);
       setContent(
         <>
-          <h1 className="text-primary">Congrats! I can't believe you actually bothered to do this quiz!</h1>
+          <h1 className="text-primary">Congrats {name}! I can't believe you actually bothered to do this quiz!</h1>
           <p>Let's check your results. You got a score of <strong className="text-primary">{score}/50</strong>.</p>
-          <table class="table">
+          <table className="table table-bordered w-auto">
             <thead>
-              <th>Score</th>
-              <th>Your Answer</th>
-              <th>Correct Answer</th>
+              <tr className="d-flex">
+                <th className="col-2">Score</th>
+                <th className="col-5">Your Answer</th>
+                <th className="col-5">Correct Answer</th>
+              </tr>
             </thead>
             <tbody>
-              {correct.map((x)=>
-                <tr className={x[0] === "1" ? "bg-success" : "bg-danger"}>
-                  <td>{x[0]}</td>
-                  <td>{x[1]}</td>
-                  <td>{x[2]}</td>
-                </tr>
+              {scores.map((x)=>
+                x
               )}
             </tbody>
           </table>
@@ -97,7 +105,7 @@ export default function App() {
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
-                {questions[question].split("\n").length > 5 ? <img className="col-6" src={questions[question].split("\n")[5]} /> : ""}
+                {questions[question].split("\n").length > 5 ? <img className="img-fluid" src={questions[question].split("\n")[5]} /> : ""}
                   <div className="form-check p-4">
                     <label className="form-check-label" htmlFor={"q"+(question+1)} >
                       <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[1])} checked={answers[question] === questions[question].split("\n")[1] ? true : false} /> {questions[question].split("\n")[1]}
@@ -163,7 +171,7 @@ export default function App() {
           </ul>
           <br></br>
           <div className="form-group">
-            <input className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (0m)" />
+            <input id="name" className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (0m)" onChange={() => setName(document.getElementById("name").value)} />
           </div>
           <br></br>
           <button className="btn btn-primary" onClick={() => setQn(0)}>Start Quiz</button>
