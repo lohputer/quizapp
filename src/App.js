@@ -18,39 +18,34 @@ export default function App() {
       const data2 = await response2.text(); 
       var answ = 0;
       if (data2.includes("\r")) {
-        answ = data2.split(/\r\n/);
+        answ = data2.split("\r\n");
       } else {
-        answ = data2.split(/\n/);
+        answ = data2.split("\n");
       }
       var score = 0;
+      var scores = [];
       for (let i=0; i<answ.length; i++) {
-        if (answ[i] === answers[i]) {
+        if (answ[i].includes(answers[i])) {
           score++;
-          setCorrect((list)=>{
-            const updatedList = [...list];
-            updatedList[i] = ["1", answ[i], answers[i]];
-            return updatedList;
-          });
+          scores.push(["1", answers[i], answ[i]]);
         } else {
-          setCorrect((list)=>{
-            const updatedList = [...list];
-            updatedList[i] = ["0", answ[i], answers[i]];
-            return updatedList;
-          });
+          scores.push(["0", answers[i], answ[i]]);
         }
       }
       setContent(
         <>
           <h1 className="text-primary">Congrats! I can't believe you actually bothered to do this quiz!</h1>
           <p>Let's check your results. You got a score of <strong className="text-primary">{score}/50</strong>.</p>
-          <table class="table">
+          <table class="table table-bordered text-center">
             <thead>
-              <th>Score</th>
-              <th>Your Answer</th>
-              <th>Correct Answer</th>
+              <tr>
+                <th>Score</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+              </tr>
             </thead>
             <tbody>
-              {correct.map((x)=>
+              {scores.map((x)=>
                 <tr className={x[0] === "1" ? "bg-success" : "bg-danger"}>
                   <td>{x[0]}</td>
                   <td>{x[1]}</td>
@@ -97,23 +92,12 @@ export default function App() {
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
-                {questions[question].split("\n").length > 5 ? <img className="col-6" src={questions[question].split("\n")[5]} /> : ""}
-                  <div className="form-check p-4">
-                    <label className="form-check-label" htmlFor={"q"+(question+1)} >
-                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[1])} checked={answers[question] === questions[question].split("\n")[1] ? true : false} /> {questions[question].split("\n")[1]}
-                    </label>
-                    <br></br>
-                    <label className="form-check-label" htmlFor={"q"+(question+1)} >
-                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[2])} checked={answers[question] === questions[question].split("\n")[2] ? true : false}  /> {questions[question].split("\n")[2]}
-                    </label>
-                    <br></br>
-                    <label className="form-check-label" htmlFor={"q"+(question+1)} >
-                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[3])} checked={answers[question] === questions[question].split("\n")[3] ? true : false}  /> {questions[question].split("\n")[3]}
-                    </label>
-                    <br></br>
-                    <label className="form-check-label" htmlFor={"q"+question} >
-                      <input type="radio" className="form-check-input" name={"q"+(question+1)} onChange={()=>answer(questions[question].split("\n")[4])} checked={answers[question] === questions[question].split("\n")[4] ? true : false} /> {questions[question].split("\n")[4]}
-                    </label>
+                {questions[question].split("\n").length > 5 ? <img className="img-fluid" src={questions[question].split("\n")[5]} /> : ""}
+                  <div className="form-group row d-flex my-2">
+                    <button className={answers[question] === questions[question].split("\n")[1] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[1])}>{questions[question].split("\n")[1]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[2] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[2])}>{questions[question].split("\n")[2]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[3] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[3])}>{questions[question].split("\n")[3]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[4] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[4])}>{questions[question].split("\n")[4]}</button>
                   </div>
                 <p className={question !== 0 && "text-center"}>
                   {String(Math.floor(seconds / 3600)).padStart(2, '0')}:
@@ -121,8 +105,8 @@ export default function App() {
                   {String(seconds - Math.floor(seconds / 3600) * 3600 - Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60) * 60).padStart(2, '0')}
                 </p>
                 <div className="row d-flex">
-                  {(question !== 0 && question < 45) && <button className="btn btn-primary col-5 m-auto" onClick={() => setQn(x => x-1)}>Previous</button>}
-                  <button className={question !== 0 ? "btn btn-primary col-5 m-auto" : "btn btn-primary"} onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>Next</button>
+                  {(question !== 0 && question < 45) && <button className="btn btn-primary col-3 m-auto p-2 border-5 border-secondary shadow" onClick={() => setQn(x => x-1)}>Previous</button>}
+                  <button className="btn btn-primary col-3 h-10 m-auto p-2 border-5 border-secondary shadow" onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>Next</button>
                 </div>
               </>
             );
