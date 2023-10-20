@@ -10,7 +10,7 @@ export default function App() {
   const [ seconds, setTime ] = useState(1500);
   const [ intervalId, setIntervalId ] = useState(null);
   const [ answers, setAnswers ] = useState(Array(50).fill(""));
-  const [ correct, setCorrect ] = useState(Array(50).fill(["", "", ""]));
+  const [ name, setName ] = useState("");
   async function endQuiz() {
     try {
       setQn(50);
@@ -25,32 +25,45 @@ export default function App() {
       var score = 0;
       var scores = [];
       for (let i=0; i<answ.length; i++) {
-        if (answ[i].includes(answers[i])) {
+        if (answers[i].includes(answ[i])) {
           score++;
-          scores.push(["1", answers[i], answ[i]]);
+          scores.push(
+            <>
+              <tr className="text-success d-flex">
+                  <td className="col-2">1</td>
+                  <td className="col-5">{answers[i]}</td>
+                  <td className="col-5">{answ[i]}</td>
+                </tr>
+            </>
+          );
         } else {
-          scores.push(["0", answers[i], answ[i]]);
+          scores.push(
+            <>
+              <tr className="text-danger d-flex">
+                  <td className="col-2">0</td>
+                  <td className="col-5">{answers[i]}</td>
+                  <td className="col-5">{answ[i]}</td>
+                </tr>
+            </>
+          );
         }
       }
+      console.log(scores);
       setContent(
         <>
-          <h1 className="text-primary">Congrats! I can't believe you actually bothered to do this quiz!</h1>
+          <h1 className="text-primary">Congrats {name}! I can't believe you actually bothered to do this quiz!</h1>
           <p>Let's check your results. You got a score of <strong className="text-primary">{score}/50</strong>.</p>
-          <table class="table table-bordered text-center">
+          <table className="table table-bordered w-auto">
             <thead>
-              <tr>
-                <th>Score</th>
-                <th>Your Answer</th>
-                <th>Correct Answer</th>
+              <tr className="d-flex">
+                <th className="col-2">Score</th>
+                <th className="col-5">Your Answer</th>
+                <th className="col-5">Correct Answer</th>
               </tr>
             </thead>
             <tbody>
               {scores.map((x)=>
-                <tr className={x[0] === "1" ? "bg-success" : "bg-danger"}>
-                  <td>{x[0]}</td>
-                  <td>{x[1]}</td>
-                  <td>{x[2]}</td>
-                </tr>
+                x
               )}
             </tbody>
           </table>
@@ -147,7 +160,7 @@ export default function App() {
           </ul>
           <br></br>
           <div className="form-group">
-            <input className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (0m)" />
+            <input id="name" className="text-center text-primary rounded shadow border border-primary p-2" type="text" placeholder="Type in your name (0m)" onChange={() => setName(document.getElementById("name").value)} />
           </div>
           <br></br>
           <button className="btn btn-primary" onClick={() => setQn(0)}>Start Quiz</button>
