@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/scss/bootstrap.scss';
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import './custom.scss';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 export default function App() {
   const [ content, setContent ] = useState("");
@@ -29,7 +30,7 @@ export default function App() {
           score++;
           scores.push(
             <>
-              <tr className="text-success d-flex">
+              <tr className="table-success d-flex">
                   <td className="col-2">1</td>
                   <td className="col-5">{answers[i]}</td>
                   <td className="col-5">{answ[i]}</td>
@@ -39,7 +40,7 @@ export default function App() {
         } else {
           scores.push(
             <>
-              <tr className="text-danger d-flex">
+              <tr className="table-danger d-flex">
                   <td className="col-2">0</td>
                   <td className="col-5">{answers[i]}</td>
                   <td className="col-5">{answ[i]}</td>
@@ -51,9 +52,9 @@ export default function App() {
       console.log(scores);
       setContent(
         <>
-          <h1 className="text-primary">Congrats {name}! I can't believe you actually bothered to do this quiz!</h1>
-          <p>Let's check your results. You got a score of <strong className="text-primary">{score}/50</strong>.</p>
-          <table className="table table-bordered w-auto">
+          <h1 className="text-primary">Congrats {name}! Thanks for doing this quiz!</h1>
+          <p>Let's check your results. You got a score of <strong className={score < 25 ? "text-danger" : (score === 25 ? "text-primary" : "text-success")}>{score}/50</strong>.</p>
+          <table className="table table-bordered table-responsive mw-100 m-auto col-10">
             <thead>
               <tr className="d-flex">
                 <th className="col-2">Score</th>
@@ -72,6 +73,9 @@ export default function App() {
     } catch (error) {
       console.log(error);
     }
+    axios.post("https://sheet.best/api/sheets/4647d83c-900e-4ef8-a589-d52c1b312210", {
+      name, score, answers
+    });
   }
   function answer(x) {
     setAnswers((list) => {
@@ -118,8 +122,8 @@ export default function App() {
                   {String(seconds - Math.floor(seconds / 3600) * 3600 - Math.floor((seconds - Math.floor(seconds / 3600) * 3600) / 60) * 60).padStart(2, '0')}
                 </p>
                 <div className="row d-flex">
-                  {(question !== 0 && question < 45) && <button className="btn btn-primary col-3 m-auto p-2 border-5 border-secondary shadow" onClick={() => setQn(x => x-1)}>Previous</button>}
-                  <button className="btn btn-primary col-3 h-10 m-auto p-2 border-5 border-secondary shadow" onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>Next</button>
+                  {(question !== 0 && question < 45) && <button className="btn btn-primary col-4 m-auto border-5 border-secondary shadow" onClick={() => setQn(x => x-1)}>Previous</button>}
+                  <button className="btn btn-primary col-4 h-10 m-auto border-5 border-secondary shadow" onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>Next</button>
                 </div>
               </>
             );

@@ -106,7 +106,7 @@ Cheese curds are often served by Russian Mennonites as part of a traditional lig
 Q18: A line crosses through (5, 3) and (3, 5). Which line is parallel to this line?
 4y = 14 - 3x
 2x + 2y = 5 - 4y
-x - y = y + 7 - x
+x + 2y = y + 7 - x
 x^2 = y^2
 -end-
 Q19: Blenders perform essential tasks in laboratories and research environments, creating _________________.

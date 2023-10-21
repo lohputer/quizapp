@@ -15,7 +15,7 @@ Patua digu
 The percentage of people aged 16-24 that are obese is less than 30% of the people aged 35-44 that are overweight.
 A brain freeze is when something that is extremely cold comes into contact with the upper palate of the mouth.
 Cheese curds are sometimes referred to formage en croutes.
-x - y = y + 7 - x
+x + 2y = y + 7 - x
 evenly distributed mixtures for use in scientific applications
 turning blenders into a bit of a novelty item
 Promise that you will be back in time
