@@ -4,7 +4,7 @@ import 'bootstrap/scss/bootstrap.scss';
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import './custom.scss';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 export default function App() {
   const [ content, setContent ] = useState("");
   const [ question, setQn ] = useState(-1);
@@ -84,7 +84,7 @@ export default function App() {
       return updatedList;
     });
   }
-  useEffect(()=>{
+  useReducer(()=>{
     if (question !== -1 && question !== 50) {
       if (intervalId) {
         clearInterval(intervalId);
@@ -109,7 +109,7 @@ export default function App() {
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
-                {questions[question].split("\n").length > 5 ? <img className="img-fluid" src={questions[question].split("\n")[5]} /> : ""}
+                {questions[question].split("\n").length > 5 ? <img className="img-fluid" src={questions[question].split("\n")[5]} alt="sds" /> : ""}
                   <div className="form-group row d-flex my-2">
                     <button className={answers[question] === questions[question].split("\n")[1] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[1])}>{questions[question].split("\n")[1]}</button>
                     <button className={answers[question] === questions[question].split("\n")[2] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[2])}>{questions[question].split("\n")[2]}</button>
