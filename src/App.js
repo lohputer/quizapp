@@ -54,7 +54,7 @@ export default function App() {
         <>
           <h1 className="text-primary">Congrats {name}! Thanks for doing this quiz!</h1>
           <p>Let's check your results. You got a score of <strong className={score < 25 ? "text-danger" : (score === 25 ? "text-primary" : "text-success")}>{score}/50</strong>.</p>
-          <table className="table table-bordered table-responsive mw-100 m-auto col-10">
+          <table className="table table-bordered table-responsive mw-100 m-auto col-12">
             <thead>
               <tr className="d-flex">
                 <th className="col-2">Score</th>
