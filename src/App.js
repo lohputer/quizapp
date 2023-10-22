@@ -13,7 +13,7 @@ export default function App() {
   const [ answers, setAnswers ] = useState(Array(50).fill(""));
   const [ name, setName ] = useState("");
   useEffect(()=>{
-    if (question === 49) {
+    if (question === 50) {
       endQuiz();
     }
   });
@@ -175,6 +175,7 @@ export default function App() {
           <>
           <h1 className="text-primary">A Fun Quiz</h1>
           <p>Hi yalls! I quite frankly have lost my coding skills after 2 months and need to get back at it. To <em>"celebrate"</em>, I made a <del>50</del> 49 wait I mean 50 anyway.. MCQ quiz with random stuff. You need to try complete as much as possible in 25 minutes. For fun. Good luck :D also dont use google for an <em>authentic</em> experience and if you click the button, it makes your box spin. Don't play if you are afraid of things that spin.</p>
+          <p><strong>Don't</strong> use Google, ChatGPT or Inspect Element for the authentic experience. Otherwise, idc.</p>
           <h2 className="text-secondary">Range of topics</h2>
           <ul className="border border-primary list-group">
             <li className="list-group-item">basic english</li>
