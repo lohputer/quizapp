@@ -12,6 +12,11 @@ export default function App() {
   const [ intervalId, setIntervalId ] = useState(null);
   const [ answers, setAnswers ] = useState(Array(50).fill(""));
   const [ name, setName ] = useState("");
+  useEffect(()=>{
+    if (question === 49) {
+      endQuiz();
+    }
+  });
   async function endQuiz() {
     try {
       setQn(50);
@@ -77,21 +82,13 @@ export default function App() {
       name, score, answers
     });
   }
-  function answer(x) {
-    setAnswers((list) => {
-      const updatedList = [...list];
-      updatedList[question] = x;
-      return updatedList;
-    });
-  }
   useEffect(()=>{
     if (question !== -1 && question !== 50) {
       if (intervalId) {
         clearInterval(intervalId);
       }
-      var newIntervalId = setInterval(function() {
+      var newIntervalId = setInterval(function () {
         setTime(prevTime => prevTime - 1);
-        clearInterval(intervalId);
       }, 1000);
       setIntervalId(newIntervalId);
       (async function() {
@@ -110,10 +107,34 @@ export default function App() {
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
                 {questions[question].split("\n").length > questions[0].split("\n").length ? <img className="img-fluid" src={questions[question].split("\n")[5]} alt="sds" /> : ""}
                   <div className="form-group row d-flex my-2">
-                    <button className={answers[question] === questions[question].split("\n")[1] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[1])}>{questions[question].split("\n")[1]}</button>
-                    <button className={answers[question] === questions[question].split("\n")[2] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[2])}>{questions[question].split("\n")[2]}</button>
-                    <button className={answers[question] === questions[question].split("\n")[3] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[3])}>{questions[question].split("\n")[3]}</button>
-                    <button className={answers[question] === questions[question].split("\n")[4] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[4])}>{questions[question].split("\n")[4]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[1] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>{
+                      setAnswers((list) => {
+                        const updatedList = [...list];
+                        updatedList[question] = questions[question].split("\n")[1];
+                        return updatedList;
+                      });
+                    }}>{questions[question].split("\n")[1]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[2] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>{
+                      setAnswers((list) => {
+                        const updatedList = [...list];
+                        updatedList[question] = questions[question].split("\n")[2];
+                        return updatedList;
+                      });
+                    }}>{questions[question].split("\n")[2]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[3] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>{
+                      setAnswers((list) => {
+                        const updatedList = [...list];
+                        updatedList[question] = questions[question].split("\n")[3];
+                        return updatedList;
+                      });
+                    }}>{questions[question].split("\n")[3]}</button>
+                    <button className={answers[question] === questions[question].split("\n")[4] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>{
+                      setAnswers((list) => {
+                        const updatedList = [...list];
+                        updatedList[question] = questions[question].split("\n")[4];
+                        return updatedList;
+                      });
+                    }}>{questions[question].split("\n")[4]}</button>
                   </div>
                 <p className={question !== 0 && "text-center"}>
                   {String(Math.floor(seconds / 3600)).padStart(2, '0')}:
@@ -122,7 +143,7 @@ export default function App() {
                 </p>
                 <div className="row d-flex">
                   {(question !== 0 && question < 45) && <button className="btn btn-primary col-4 m-auto border-5 border-secondary shadow" onClick={() => setQn(x => x-1)}>Previous</button>}
-                  <button className="btn btn-primary col-4 h-10 m-auto border-5 border-secondary shadow" onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>{question === 49 ? "Submit" : "Next"}</button>
+                  <button className="btn btn-primary col-4 h-10 m-auto border-5 border-secondary shadow" onClick={()=>setQn(x => x+1)}>{question === 49 ? "Submit" : "Next"}</button>
                 </div>
               </>
             );
@@ -137,7 +158,8 @@ export default function App() {
         clearInterval(intervalId);
       }
     };
-  }, [question, seconds]);
+    // eslint-disable-next-line
+  }, [question, seconds, answers]);
   useEffect(()=>{
     if (question !== -1) {
       document.getElementById("quiz").style.transform = "rotate(360deg)";
