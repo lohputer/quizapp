@@ -4,7 +4,7 @@ import 'bootstrap/scss/bootstrap.scss';
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import './custom.scss';
 import axios from 'axios';
-import { useEffect, useState, useReducer } from 'react';
+import { useEffect, useState } from 'react';
 export default function App() {
   const [ content, setContent ] = useState("");
   const [ question, setQn ] = useState(-1);
@@ -84,7 +84,7 @@ export default function App() {
       return updatedList;
     });
   }
-  useReducer(()=>{
+  useEffect(()=>{
     if (question !== -1 && question !== 50) {
       if (intervalId) {
         clearInterval(intervalId);
@@ -104,12 +104,11 @@ export default function App() {
           } else {
             questions = data.split("-end-\n")
           }
-          console.log(questions[question], questions, question);
           setTimeout(()=>{
             setContent(
               <>
                 <h1 className="text-primary">{questions[question].split("\n")[0]}</h1>
-                {questions[question].split("\n").length > 5 ? <img className="img-fluid" src={questions[question].split("\n")[5]} alt="sds" /> : ""}
+                {questions[question].split("\n").length > questions[0].split("\n").length ? <img className="img-fluid" src={questions[question].split("\n")[5]} alt="sds" /> : ""}
                   <div className="form-group row d-flex my-2">
                     <button className={answers[question] === questions[question].split("\n")[1] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[1])}>{questions[question].split("\n")[1]}</button>
                     <button className={answers[question] === questions[question].split("\n")[2] ? "btn btn-secondary m-auto my-2 col-md-5" : "btn btn-primary m-auto my-2 col-md-5"} name={"q"+(question+1)} onClick={()=>answer(questions[question].split("\n")[2])}>{questions[question].split("\n")[2]}</button>
@@ -123,7 +122,7 @@ export default function App() {
                 </p>
                 <div className="row d-flex">
                   {(question !== 0 && question < 45) && <button className="btn btn-primary col-4 m-auto border-5 border-secondary shadow" onClick={() => setQn(x => x-1)}>Previous</button>}
-                  <button className="btn btn-primary col-4 h-10 m-auto border-5 border-secondary shadow" onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>Next</button>
+                  <button className="btn btn-primary col-4 h-10 m-auto border-5 border-secondary shadow" onClick={question !== 49 ? () => setQn(x => x+1) : () => endQuiz()}>{question === 49 ? "Submit" : "Next"}</button>
                 </div>
               </>
             );
