@@ -12,75 +12,78 @@ export default function App() {
   const [ intervalId, setIntervalId ] = useState(null);
   const [ answers, setAnswers ] = useState(Array(50).fill(""));
   const [ name, setName ] = useState("");
+  const [ submitted, setSubmit ] = useState(false);
   useEffect(()=>{
-    if (question === 50) {
-      endQuiz();
-    }
-  });
-  async function endQuiz() {
-    try {
-      setQn(50);
-      const response2 = await fetch(`${process.env.PUBLIC_URL}/answers.txt`);
-      const data2 = await response2.text(); 
-      var answ = 0;
-      if (data2.includes("\r")) {
-        answ = data2.split("\r\n");
-      } else {
-        answ = data2.split("\n");
-      }
-      var score = 0;
-      var scores = [];
-      for (let i=0; i<answ.length; i++) {
-        if (answers[i].includes(answ[i])) {
-          score++;
-          scores.push(
+    if (question === 50 && !submitted) {
+      (async function(){
+        try {
+          setQn(50);
+          const response2 = await fetch(`${process.env.PUBLIC_URL}/answers.txt`);
+          const data2 = await response2.text(); 
+          var answ = 0;
+          if (data2.includes("\r")) {
+            answ = data2.split("\r\n");
+          } else {
+            answ = data2.split("\n");
+          }
+          var score = 0;
+          var scores = [];
+          for (let i=0; i<answ.length; i++) {
+            if (answers[i].includes(answ[i])) {
+              score++;
+              scores.push(
+                <>
+                  <tr className="table-success d-flex row">
+                      <td className="col-2">1</td>
+                      <td className="col-5">{answers[i]}</td>
+                      <td className="col-5">{answ[i]}</td>
+                    </tr>
+                </>
+              );
+            } else {
+              scores.push(
+                <>
+                  <tr className="table-danger d-flex row">
+                      <td className="col-2">0</td>
+                      <td className="col-5">{answers[i]}</td>
+                      <td className="col-5">{answ[i]}</td>
+                    </tr>
+                </>
+              );
+            }
+          }
+          setContent(
             <>
-              <tr className="table-success d-flex">
-                  <td className="col-2">1</td>
-                  <td className="col-5">{answers[i]}</td>
-                  <td className="col-5">{answ[i]}</td>
-                </tr>
+              <h1 className="text-primary">Congrats {name}! Thanks for doing this quiz!</h1>
+              <p>Let's check your results. You got a score of <strong className={score < 25 ? "text-danger" : (score === 25 ? "text-primary" : "text-success")}>{score}/50</strong>.</p>
+              <table className="table table-bordered table-responsive m-auto ">
+                <thead>
+                  <tr className="d-flex row">
+                    <th className="col-2">Score</th>
+                    <th className="col-5">Your Answer</th>
+                    <th className="col-5">Correct Answer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {scores.map((x)=>
+                    x
+                  )}
+                </tbody>
+              </table>
             </>
-          );
-        } else {
-          scores.push(
-            <>
-              <tr className="table-danger d-flex">
-                  <td className="col-2">0</td>
-                  <td className="col-5">{answers[i]}</td>
-                  <td className="col-5">{answ[i]}</td>
-                </tr>
-            </>
-          );
+          ); 
+        } catch (error) {
+          console.log(error);
         }
-      }
-      console.log(scores);
-      setContent(
-        <>
-          <h1 className="text-primary">Congrats {name}! Thanks for doing this quiz!</h1>
-          <p>Let's check your results. You got a score of <strong className={score < 25 ? "text-danger" : (score === 25 ? "text-primary" : "text-success")}>{score}/50</strong>.</p>
-          <table className="table table-bordered table-responsive mw-100 m-auto col-12">
-            <thead>
-              <tr className="d-flex">
-                <th className="col-2">Score</th>
-                <th className="col-5">Your Answer</th>
-                <th className="col-5">Correct Answer</th>
-              </tr>
-            </thead>
-            <tbody>
-              {scores.map((x)=>
-                x
-              )}
-            </tbody>
-          </table>
-        </>
-      ); 
-    } catch (error) {
-      console.log(error);
+        axios.post("https://sheet.best/api/sheets/4647d83c-900e-4ef8-a589-d52c1b312210", {
+          name, score, answers
+        });
+      })();
+      endQuiz();
+      setSubmit(true);
     }
-    axios.post("https://sheet.best/api/sheets/4647d83c-900e-4ef8-a589-d52c1b312210", {
-      name, score, answers
-    });
+  }, [question, submitted, answers, name]);
+  async function endQuiz() {
   }
   useEffect(()=>{
     if (question !== -1 && question !== 50) {
