@@ -140,6 +140,9 @@ export default function App() {
         }
       })();
     }
+    if (seconds <= 0) {
+      endQuiz();
+    }
     return () => {
       if (intervalId) {
         clearInterval(intervalId);
