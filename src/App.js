@@ -8,16 +8,16 @@ import { useEffect, useState } from 'react';
 export default function App() {
   const [ content, setContent ] = useState("");
   const [ question, setQn ] = useState(-1);
-  const [ seconds, setTime ] = useState(1500);
+  const [ seconds, setTime ] = useState(1200);
   const [ intervalId, setIntervalId ] = useState(null);
-  const [ answers, setAnswers ] = useState(Array(50).fill(""));
+  const [ answers, setAnswers ] = useState(Array(15).fill(""));
   const [ name, setName ] = useState("");
   const [ submitted, setSubmit ] = useState(false);
   useEffect(()=>{
-    if (question === 50 && !submitted) {
+    if (question === 15 && !submitted) {
       (async function(){
         try {
-          setQn(50);
+          setQn(15);
           const response2 = await fetch(`${process.env.PUBLIC_URL}/answers.txt`);
           const data2 = await response2.text(); 
           var answ = 0;
@@ -86,7 +86,7 @@ export default function App() {
   async function endQuiz() {
   }
   useEffect(()=>{
-    if (question !== -1 && question !== 50) {
+    if (question !== -1 && question !== 15) {
       if (intervalId) {
         clearInterval(intervalId);
       }
@@ -165,30 +165,20 @@ export default function App() {
       }
     };
     // eslint-disable-next-line
-  }, [question, seconds, answers]);
-  useEffect(()=>{
-    if (question !== -1) {
-      document.getElementById("quiz").style.transform = "rotate(360deg)";
-      setTimeout(()=>{
-        document.getElementById("quiz").style.transform = "none";
-      }, 100);
-    }
-  }, [question]);
+  }, [question, seconds, answers])
   return (
     <div className="App vh-100 vw-100 d-flex align-items-center justify-content-center">
       <div id="quiz" className="container col-8 m-auto p-4 bg-info text-center rounded shadow">
         {content === "" ?
           <>
           <h1 className="text-primary">A Fun Quiz</h1>
-          <p>Hi yalls! I quite frankly have lost my coding skills after 2 months and need to get back at it. To <em>"celebrate"</em>, I made a <del>50</del> 49 wait I mean 50 anyway.. MCQ quiz with random stuff. You need to try complete as much as possible in 25 minutes. For fun. Good luck :D also dont use google for an <em>authentic</em> experience and if you click the button, it makes your box spin. Don't play if you are afraid of things that spin.</p>
-          <p><strong>Don't</strong> use Google, ChatGPT or Inspect Element for the authentic experience. Otherwise, idc.</p>
+          <p>Hi yalls! This is a fun quiz made by a sec 2 (at that time in 2023).</p>
           <h2 className="text-secondary">Range of topics</h2>
           <ul className="border border-primary list-group">
             <li className="list-group-item">basic english</li>
             <li className="list-group-item">random knowledge</li>
             <li className="list-group-item">maybe math?? and science??</li>
             <li className="list-group-item">statistics</li>
-            <li className="list-group-item">i wrote this at 10.52pm at night and i have to wake up at 6.20am and im also planning to sleep at midnight only so pls excuse the god awful questions made</li>
           </ul>
           <br></br>
           <div className="form-group">
