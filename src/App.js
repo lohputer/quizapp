@@ -10,14 +10,14 @@ export default function App() {
   const [ question, setQn ] = useState(-1);
   const [ seconds, setTime ] = useState(1200);
   const [ intervalId, setIntervalId ] = useState(null);
-  const [ answers, setAnswers ] = useState(Array(15).fill(""));
+  const [ answers, setAnswers ] = useState(Array(50).fill(""));
   const [ name, setName ] = useState("");
   const [ submitted, setSubmit ] = useState(false);
   useEffect(()=>{
-    if (question === 15 && !submitted) {
+    if (question === 50 && !submitted) {
       (async function(){
         try {
-          setQn(15);
+          setQn(50);
           const response2 = await fetch(`${process.env.PUBLIC_URL}/answers.txt`);
           const data2 = await response2.text(); 
           var answ = 0;
@@ -86,7 +86,7 @@ export default function App() {
   async function endQuiz() {
   }
   useEffect(()=>{
-    if (question !== -1 && question !== 15) {
+    if (question !== -1 && question !== 50) {
       if (intervalId) {
         clearInterval(intervalId);
       }
